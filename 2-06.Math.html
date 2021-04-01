@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //Math - 수학
+
+    //round()
+    //반올림, 반내림. 
+    console.log(Math.round(4.9));
+    console.log(Math.round(4.4));
+
+    //ceil()
+    //무조건 올림으로 정수를 만듬
+    console.log(Math.ceil(6.2));
+    //10
+    //20
+
+    //72건
+    //1페이지 보여지는 건수 15개 설정
+    //1,2,3,4,5,6,7,8
+
+    console.log(Math.ceil(72/15));
+
+    //floor()
+    //무조건 내림
+    console.log(Math.floor(9.9));
+    console.log(Math.floor(-4.2));
+
+    //trunc()
+    //정수부분만 리턴
+    console.log(Math.trunc(9.9));
+    console.log(Math.trunc(-4.2));
+
+    //sign()
+    //음수이면 -1, 양수이면 1, 0이면 0
+    console.log(Math.sign(-7));
+    console.log(Math.sign(13));
+    console.log(Math.sign(0));
+
+    //pow()
+    //제곱
+    console.log(Math.pow(8,2));
+
+    //sqrt()
+    //루트
+    console.log(Math.sqrt(64));
+
+
+    //abs()
+    //무조건 양수로 변환
+    console.log(Math.abs(-4.7));
+    
+    //max()
+    console.log(Math.max(0,150,23,45,-28,77));
+    console.log(Math.min(0,150,23,45,-28,77));
+
+    //random()
+    var x = Math.random(); //0~1사이의 숫자
+    console.log(x);
+
+    //1~10 랜덤 숫자, 정수
+    var x = Math.floor((Math.random() * 10) + 1) //0> x <10
+    console.log(x);
+
+    //1~100
+    var x = Math.floor((Math.random() * 100) + 1);
+    console.log(x);
+
+    function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    //min 1, max 10
+    //10 90
+
+    console.log(getRndInteger(10,20));
+
+    //문제은행, 퀴즈 앱
+    //1000개 문제가 등록되어 있어
+    //
+
+
+  </script>
+</body>
+</html>

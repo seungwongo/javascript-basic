@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .border-red {
+        border:2px dashed red;
+    }
+
+    .border-green {
+        border:2px solid green;
+    }
+
+    .border-default {
+        border-width:1px;
+        border-color:blue;
+        border-style:solid;
+    }
+    </style>
+</head>
+
+<body>
+    Text:
+    <br>
+    <input type="text" id="text1" onblur="changeBorder();">
+    
+    <br> Radio(이메일 수신):
+    <br>
+    <label>
+        <input type="radio" name="radio_email_yn" value="Y" onclick="showEmail();"> 동의</label>
+    <label>
+        <input type="radio" name="radio_email_yn" value="N" onclick="hideEmail();" checked> 거부</label>
+        <div id="divEmail" style="display:none;">이메일 <input type="text" id="email"></div>
+    <br> Select:
+    <br>
+    <select id="select1" onchange="doChange(this);">
+        <option value=""></option>
+        <option value="KO">Korea</option>
+        <option value="CN">China</option>
+        <option value="JP">Japan</option>
+    </select>
+    <select id="select2" style="display:none;">
+      <option value="">서울</option>
+      <option value="">부산</option>
+      <option value="">대전</option>
+      <option value="">제주</option>
+  </select>
+    <button type="button" onclick="doSave();">Save</button>
+    <br>
+    <script>
+      function changeBorder(){
+        var text1 = document.getElementById("text1");
+        if(text1.value != "") {
+          text1.className = "border-green";
+        }
+      }
+
+      function showEmail() {
+        document.getElementById("divEmail").style.display = "";
+      }
+
+      function hideEmail() {
+        document.getElementById("divEmail").style.display = "none";
+      }
+
+      function doSave() {
+        var text1 = document.getElementById("text1");
+        if(text1.value == "") {
+          text1.className = "border-red";
+          return alert("필수값들을 입력하세요.");
+        }
+
+        console.log("doSave 실행합니다.");
+      }
+
+      function doChange(obj) {
+        if(obj.value == "KO") {
+          document.getElementById("select2").style.display = "";
+        }else {
+          document.getElementById("select2").style.display = "none";
+        }
+      }
+
+    </script>
+</body>
+
+</html>

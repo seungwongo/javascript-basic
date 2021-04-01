@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //Number
+
+    var x = 123;
+    //toString();
+    console.log(x.toString());
+
+    //toFixed()
+    //지정된 소수점 자리수까지 반올림으로 표기
+    var x = 123999.567243;
+    console.log(x.toFixed(2));
+
+    //toPrecision()
+    var x = 9.545;
+    console.log(x.toPrecision(2));
+
+    var x = Number("10"); // 숫자 10
+    var x = Number(true); //1
+    var x = Number(false); //0
+    console.log(Number(" 10  "));
+    console.log(Number("3.14"));
+    console.log(Number(" 10"));
+    console.log(Number(" 10.33"));
+    console.log(Number(" 10,33")); //NaN
+    console.log(Number("John")); //NaN
+    console.log(Number("10 33")); //NaN
+    //NaN - Not a Number
+
+    //parseInt()
+    console.log(parseInt("3"));
+    console.log(parseInt("3.9"));
+    console.log(parseInt("10 33"));
+    console.log(parseInt("12 years"));
+    console.log(parseInt("years 13"));
+
+    //parseFloat()
+    console.log(parseFloat("10"));
+    console.log(parseFloat("13.9"));
+    console.log(parseFloat("13.9 aa"));
+
+
+  </script>
+</body>
+</html>

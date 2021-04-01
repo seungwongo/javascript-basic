@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    
+    var url = "https://0144ece0-2710-4df2-9f58-be69b762ba62.mock.pstmn.io/productList";
+    // var data = axios.get(url).then(function(response){
+    //   console.log(response.data);
+    //   return response.data;
+    // });
+
+    function getData() {
+      //promise
+
+      return new Promise(function(resolve, reject){
+        axios.get(url).then(function(response){
+          console.log(response.data);
+          resolve(response.data);
+        });
+      });
+    }
+
+    async function getData2(path) {
+      return (await axios.get(path)).data;
+    }
+
+    async function calculateSum(){
+      var data = await getData2(url);
+
+    
+      var total = 0;
+
+      for(var item of data) {
+          total += item.price;
+        }
+
+        console.log(total);
+    }
+
+    calculateSum();
+
+    
+
+    // getData().then(function(data){
+    //   for(var item of data) {
+    //     total += item.price;
+    //   }
+
+    //   console.log(total);
+    // });
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="this.style.backgroundColor='red'">클릭</button>
+  <button type="button" onclick="callFunc(this);">클릭2</button>
+  <select onchange="changeSelect(this);">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+  <script>
+    // console.log(window);
+    console.log(this);
+
+    function fullName(){
+
+    }
+
+    var person = {
+      firstName: "John",
+      lastName: "Doe",
+      fullName: function() {
+        return this.firstName + " " + this.lastName;
+      }
+    };
+
+    console.log(person.fullName());
+
+    function myFunction() {
+      console.log(this);
+    }
+
+    myFunction();
+
+    function callFunc(obj) {
+      console.log(obj)
+    }
+
+    function changeSelect(obj){
+      console.log(obj.value);
+    }
+
+  </script>
+</body>
+</html>

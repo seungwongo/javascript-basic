@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    Text:
+    <br>
+    <input type="text" id="text1" value="ABC">
+    <br> 관심사:
+    <br>
+    <label>
+        <input type="checkbox" name="chk_interest" value="it"> IT/컴퓨터</label>
+    <label>
+        <input type="checkbox" name="chk_interest" value="entertainment"> 엔터테인먼트</label>
+    <label>
+        <input type="checkbox" name="chk_interest" value="sports"> 스포츠</label>
+    <label>
+        <input type="checkbox" name="chk_interest" value="shoping"> 쇼핑</label>
+    <label>
+        <input type="checkbox" name="chk_interest" value="book"> 도서/책</label>
+    <br> Radio:
+    <br>
+    <label>
+        <input type="radio" name="radio_email_yn" value="Y" checked> 동의</label>
+    <label>
+        <input type="radio" name="radio_email_yn" value="N"> 거부</label>
+    <br> Select:
+    <br>
+    <select id="select1">
+        <option value="KO">Korea</option>
+        <option value="CN">China</option>
+        <option value="JP">Japan</option>
+    </select>
+
+    <div id="div1"><h1>aofoeoefofoeffe</h1></div>
+    
+    <br>
+    <button type="button" onclick="doSave();">Save</button>
+    <script>
+      document.getElementById("text1").value = "49423943";
+
+      function doSave() {
+        // console.log("doSave");
+        var oText1 = document.getElementById("text1");
+        console.log(oText1.value);
+        var textValue = oText1.value;
+        // console.log(oText1);
+
+        // var oText2 = document.querySelector("#text1");
+        // console.log(oText2);
+
+        // var oCheckbox = document.getElementsByName("chk_interest");
+        // console.log(oCheckbox);
+        // for(var i=0 ; i<oCheckbox.length ; i++) {
+        //   if(oCheckbox[i].checked){
+        //     console.log(oCheckbox[i].value);
+        //   }
+        // }
+
+        var oCheckbox2 = document.querySelectorAll("[name=chk_interest]:checked");
+        
+        console.log(oCheckbox2);
+
+        var oRadio = document.querySelector("[name=radio_email_yn]:checked");
+        console.log(oRadio);
+
+
+        var oSelect = document.getElementById("select1");
+        console.log(oSelect.value);
+
+        // console.log(document.getElementById("div1").innerHTML);
+
+        console.log(document.getElementsByTagName("div"));
+
+
+
+      }
+    </script>
+</body>
+
+</html>

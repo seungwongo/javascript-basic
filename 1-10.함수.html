@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var x = 10;
+    var vat = 0.2;
+    var tax = 10 * vat;
+    var tax2 = 10 * vat;
+    var tax3 = 10 * vat;
+    var tax4 = 10 * vat;
+    var tax5 = 10 * vat;
+
+    //특정 기능을 수행하도록 작성된 코드 블록
+    //function name(){
+      //코드
+    //}
+
+    //name();
+
+    function calculateTax(profit){
+      var vat = 0.2;
+      var tax = profit * 0.1;
+      // console.log(tax);
+
+      return tax;
+    }
+
+    var tax = calculateTax(10);
+    console.log(tax);
+
+
+    function calculator(x1, x2, operator) {
+      if(operator == "+") {
+        return x1 + x2;
+      }else if(operator == "-") {
+        return x1 - x2;
+      }
+    }
+
+    var plus = calculator(5, 7, "+");
+    console.log(plus);
+
+    var minus = calculator(5, 7, "-");
+    console.log(minus);
+
+  </script>
+</body>
+</html>

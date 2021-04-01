@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="searchTxt" onkeydown="checkEnter(event);" /> <button type="button" onclick="doSearch();">조회</button>
+  <table id="tb">
+    <thead>
+      <tr>
+        <th onclick="doSort('name');">name</th>
+        <th onclick="doSort('email');">email</th>
+        <th onclick="doSort('company');">company</th>
+        <th onclick="doSort('address');">address</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  
+  <script src="/scripts/4-04.user_data.js"></script>
+  <script>
+    var currentData = [];
+    function doSort(key) {
+      currentData.sort(function(a,b){
+        return a[key]>b[key]? 1: a[key]<b[key]?-1 : 0;
+      });
+
+      renderTable(currentData);
+    }
+
+    function checkEnter(event) {
+      if(event.keyCode == 13) {
+        doSearch();
+      }
+    }
+
+    function doSearch() {
+      var searchText = document.getElementById("searchTxt").value;
+
+      
+      if(searchText == "") {
+        currentData = userList;
+        renderTable(userList);
+      }else {
+        // /pattern/gi
+        var regExp = new RegExp(searchText,"i");
+        var data = userList.filter(item => {
+          if(regExp.test(item.name)) {
+            return true;
+          }else if(regExp.test(item.email)) {
+            return true;
+          }else if(regExp.test(item.company)) {
+            return true;
+          }else if(regExp.test(item.address)) {
+            return true;
+          }else {
+            return false;
+          }
+        });
+
+        currentData = data;
+
+        renderTable(data);
+      }
+    }
+
+    function renderTable(data) {
+      var h = [];
+      data.forEach(item => {
+        h.push(`<tr>`);
+        h.push(`<td>${item.name}</td>`);
+        h.push(`<td>${item.email}</td>`);
+        h.push(`<td>${item.company}</td>`);
+        h.push(`<td>${item.address}</td>`);
+        h.push(`</tr>`);
+      });
+
+      document.querySelector("#tb>tbody").innerHTML = h.join("");
+    }
+
+  </script>
+</body>
+</html>

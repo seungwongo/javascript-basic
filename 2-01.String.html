@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var txt = "ABCDEFGHIJKLMN";
+    console.log(txt.length); //글자길이
+
+    //indexOf
+    var str = "Please locate where 'locate'";
+    console.log(str.indexOf("John"));
+
+    if(str.indexOf("John") > -1) {
+      console.log("locate문자 발견");
+    }
+
+    //lastIndexOf
+    console.log(str.lastIndexOf("locate"));
+
+
+    console.log(str.search("locate"));
+
+    //slice
+    var str = "Apple, Banana, Kiwi";
+    // console.log(str.slice(7,13));
+    // console.log(str.slice(7));
+    // console.log(str.slice(-12,-6));
+
+    //substring
+    console.log(str.substring(7,13));
+
+    //substr
+    console.log(str.substr(7,6));
+
+    var birthday = "970527";
+    console.log(birthday.substr(0,2));
+    console.log(birthday.substr(2,2));
+
+    var birthday = "1997-05-27";
+    console.log(birthday.substring(0,birthday.indexOf("-")));
+
+    //repace
+    // var str = "Please visit here!";
+    // var str2 = str.replace("here","there");
+    // console.log(str2);
+
+    // var str = "Please visit here here here!";
+    // var str2 = str.replace("here","there");
+    // console.log(str2);
+
+    var str = "Please visit here HERE here!";
+    var str2 = str.replace(/here/gi,"there");
+    console.log(str2);
+
+    //uppercase
+    console.log(str.toUpperCase());
+
+    //lowercase
+    console.log(str.toLowerCase());
+
+    //john
+    //JOHN
+    //
+    //데이터베이스 john, John
+
+    //concat
+    var txt1 = "Hello";
+    var txt2 = "World";
+    var txt3 = txt1 + " " + txt2;
+    console.log(txt3);
+    var txt4 = txt1.concat(" ",txt2);
+    console.log(txt4);
+
+    //trim
+    var str = "    Hello World!      ";
+    console.log(str);
+    console.log(str.trim());
+
+    //padStart
+    var str = "15";
+    console.log(str.padStart(2,0));
+
+    //padEnd
+    console.log(str.padEnd(4,0));
+
+    //charAt
+    var str = "Hello world";
+    console.log(str.charAt(1));
+
+    //split
+    var tags = "키보드,기계식,블루투스";
+    var arr = tags.split(",");
+    console.log(arr);
+
+    var birthday = "1997-06-12";
+    var arr2 = birthday.split("-");
+    console.log(arr2);
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //scope는 변수에 대한 접근성을 의미합니다.
+
+    //local scope
+    function myFunction(){
+      carName = "Hyundai";
+      // console.log(carName);
+    }
+
+    // myFunction();
+
+    // console.log(carName);
+
+    //global scope
+    var carName2 = "KIA";
+
+    // myFunction2();
+
+    function myFunction2(){
+      console.log(carName2);
+    }
+
+    myFunction2();
+
+    
+
+    // var myFunction3 = function() {
+    //   console.log(carName2);
+    // }
+
+    // myFunction3();
+
+    
+
+    
+  </script>
+</body>
+</html>
